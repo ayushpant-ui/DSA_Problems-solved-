@@ -19,9 +19,11 @@ public:
         }
         while(i<nums1.size()){
             merge.push_back(nums1[i]);
+            i++;
         }
         while(j<nums2.size()){
             merge.push_back(nums2[j]);
+            j++;
         }
         int n = merge.size();
         if (n % 2 ==1){
@@ -31,3 +33,12 @@ public:
         return((merge[n/2]+merge[(n/2)-1])/2.0);
     }
 };
+
+int main (){
+    vector <int> v1 ={1,2,3,4,5,6} ;
+    vector <int> v2 ={10,11,12} ;
+    Solution s1 ;
+    double a =s1.findMedianSortedArrays(v1,v2);
+    cout << a ;
+    return 0 ;
+}
